@@ -1,0 +1,119 @@
+.MoviePage {
+	height: 100vh;
+	width: 100%;
+	color: #fbfbfb;
+	background: linear-gradient(
+			0deg,
+			rgba(17, 17, 17, 0.3),
+			rgba(17, 17, 17, 0.3)
+		),
+		url(../img/background.png);
+}
+
+.MovePage-wrapper {
+	width: 1140px;
+	margin: auto;
+	border: 1px solid red;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-logo {
+	color: #fefefe;
+	font-weight: 300;
+	font-size: 24px;
+	padding: 35px 0 35px 0;
+	text-decoration: none;
+}
+
+.header-input {
+	position: relative;
+}
+
+.header-input i {
+	position: absolute;
+	top: 15px;
+	left: 30px;
+}
+
+.header-input input {
+	width: 420px;
+	padding: 15px 0 15px 68px;
+	background: #1b1919;
+	border-radius: 30px;
+	border: none;
+	outline: none;
+	font-weight: 500;
+	font-size: 18px;
+	color: #979191;
+}
+
+.header-input input::-webkit-input-placeholder {
+	font-weight: 400;
+	font-size: 18px;
+	color: #5f5f5f;
+}
+
+.title {
+	width: 566px;
+	font-weight: 900;
+	font-size: 72px;
+	margin-bottom: 30px;
+	margin-top: 120px;
+	color: #fbfbfb;
+}
+
+.desc {
+	display: flex;
+	align-items: center;
+	margin-bottom: 197px;
+}
+
+.desc .rating {
+	font-weight: 900;
+	font-size: 12px;
+	margin-right: 24px;
+}
+
+.desc .genre,
+.desc .type {
+	font-weight: 600;
+	font-size: 24px;
+	border-right: 1px solid;
+	padding-right: 24px;
+	margin-right: 25px;
+}
+
+.desc .year {
+	font-weight: 600;
+	font-size: 24px;
+}
+
+.watch {
+	padding: 23px 70px;
+	background: transparent;
+	outline: none;
+	border: 2px solid #fbfbfb;
+	box-sizing: border-box;
+	border-radius: 40px;
+	font-weight: 600;
+	font-size: 18px;
+	color: #fbfbfb;
+	margin-bottom: 50px;
+}
+
+.watch:hover {
+	border: 2px solid #afa6a6;
+	color: #afa6a6;
+	background: #000;
+}
+
+.awards {
+	font-weight: 600;
+	font-size: 18px;
+	color: #fbfbfb;
+}

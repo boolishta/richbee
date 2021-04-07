@@ -1,0 +1,16 @@
+.rating {
+	display: flex;
+	font-weight: 900;
+	font-size: 12px;
+	background-color: #fac539;
+	color: #000000;
+	padding: 8px 12px;
+	border-radius: 8px;
+	width: 87px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+.rating .imdb {
+	margin-right: 8px;
+}

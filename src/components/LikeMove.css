@@ -1,0 +1,64 @@
+.like_1 {
+	position: relative;
+	width: 260px;
+	height: 360px;
+}
+
+.like_1 img {
+	width: 100%;
+	height: 100%;
+}
+
+.like_1:hover .like_1--inner {
+	display: flex;
+}
+
+.like_1--inner {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: #ffffff;
+	padding: 30px;
+	border-radius: 15px;
+	background: linear-gradient(
+		0deg,
+		rgba(20, 19, 19, 0.85),
+		rgba(20, 19, 19, 0.85)
+	);
+	cursor: pointer;
+}
+
+.like_1--inner .title {
+	font-weight: 800;
+	font-size: 24px;
+	margin-bottom: 8px;
+}
+
+.like_1--inner .genre {
+	font-weight: 500;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+.like_1--inner .type {
+	font-weight: 500;
+	font-size: 14px;
+	margin-bottom: 21px;
+}
+
+.like_1--inner .plot {
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+	height: 150px;
+	overflow: hidden;
+}
+
+.like_1--inner .rating {
+	position: absolute;
+	bottom: 30px;
+}

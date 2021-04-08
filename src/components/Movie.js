@@ -5,7 +5,6 @@ import './Movie.css'
 import Rating from './Rating'
 
 export default function Movie({ data }) {
-	console.log(data)
 	return (
 		<>
 			{data.Response === 'False' ? (

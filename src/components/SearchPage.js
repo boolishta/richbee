@@ -20,12 +20,22 @@ export default function SearchPage({
 
 	function handleSubmit(event) {
 		event.preventDefault()
+		requestSearch(search)
 		setSearch('')
-		requestSearch()
 	}
 
 	return (
 		<div className='SearchPage'>
+			<div className='bg'>
+				<iframe
+					src='https://www.youtube.com/embed/gA0nQyDZR4A?controls=0&showinfo=0&rel=0&autoplay=1&loop=1'
+					title='YouTube video player'
+					frameBorder='0'
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+					allowFullScreen
+				></iframe>
+			</div>
+
 			<div className='SearchPage-wrapper'>
 				<h1>Unlimited movies, TV shows, and more.</h1>
 				<div className='text'>Watch anywhere. Cancel anytime.</div>

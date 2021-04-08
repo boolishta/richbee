@@ -8,15 +8,15 @@ const api_key = '8ebb70c7'
 const url = 'https://www.omdbapi.com'
 
 function App() {
-	const [data, setData] = useState({})
+	const [data, setData] = useState({ Response: 'False' })
 	const [search, setSearch] = useState('')
 	const [movie, setMovie] = useState(false)
 	const [error, setError] = useState(null)
 
-	const requestSearch = async () => {
+	const requestSearch = async str => {
 		try {
 			const res = await Axios.get(
-				`${url}/?apikey=${api_key}&t=${search}&plot=full`
+				`${url}/?apikey=${api_key}&t=${str}&plot=full`
 			)
 			setData(res.data)
 			setMovie(true)

@@ -1,21 +1,35 @@
 .SearchPage {
 	display: flex;
 	position: relative;
-	width: 100vw;
-	height: 100vh;
+	height: 97vh;
 	justify-content: center;
 	color: white;
 	background: linear-gradient(
-			0deg,
-			rgba(17, 17, 17, 0.3),
-			rgba(17, 17, 17, 0.3)
-		),
-		url(../img/background.png);
+		0deg,
+		rgba(17, 17, 17, 0.3),
+		rgba(17, 17, 17, 0.3)
+	);
+	/* background-size: 100%; */
+}
+
+.SearchPage .bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.bg iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
 }
 
 .SearchPage-wrapper {
-	margin-top: 150px;
-
+	padding-top: 30px;
 	text-align: center;
 	width: 730px;
 }

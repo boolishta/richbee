@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './MoviePage.css'
 import Rating from './Rating'
+import got from '../img/got.png'
+import bg from '../img/background.png'
+import LikeMove from './LikeMove'
 
 export default function MoviePage({
 	data,
@@ -17,14 +20,18 @@ export default function MoviePage({
 	function handleSubmit(event) {
 		event.preventDefault()
 		setSearch('')
-		requestSearch()
+		requestSearch(search)
+	}
+
+	function watchVideo() {
+		document.querySelector('.watch-trailer').classList.toggle('fade')
 	}
 
 	return (
 		<>
 			<div className='MoviePage'>
-				<div className='MovePage-wrapper'>
-					<div className='header'>
+				<div className='header'>
+					<div className='header-inner'>
 						<Link to='/' className='header-logo'>
 							Richbee Shows
 						</Link>
@@ -57,22 +64,65 @@ export default function MoviePage({
 							/>
 						</form>
 					</div>
-
-					<div className='title'>{data.Title}</div>
-					<div className='desc'>
-						<Rating rating={data.imdbRating} className='rating' />
-						<div className='genre'>{data.Genre}</div>
-						<div className='type'>{data.Type}</div>
-						<div className='year'>{data.Year}</div>
+				</div>
+				<div className='watch-trailer'>
+					<div className='modal'>
+						<div className='video'>
+							<iframe
+								title='trailer'
+								src='https://www.youtube.com/embed/HDm94zrbXJA'
+								frameBorder='0'
+								allowFullScreen
+							></iframe>
+						</div>
+						<button href='#' className='close' onClick={watchVideo}>
+							close
+						</button>
 					</div>
-					<button className='watch'>Watch</button>
-					<div className='awards'>
-						{/* <div className='wrapper'>
-								<div className='top'>Top Rated TV #148</div>
-								<div className='won'>Won 2 Golden Globes.</div>
-							</div> */}
-						<div className='another'>{data.Awards}</div>
+				</div>
+				<div className='MovePage-wrapper'>
+					<img src={bg} alt='background' className='MovePage-bg' />
+					{data.Response === 'True' ? (
+						<div className='MovePage-inner'>
+							<div className='title'>{data.Title}</div>
+							<div className='desc'>
+								<Rating rating={data.imdbRating} className='rating' />
+								<div className='genre'>{data.Genre}</div>
+								<div className='type'>{data.Type}</div>
+								<div className='year'>{data.Year}</div>
+							</div>
+							<button className='watch' onClick={watchVideo}>
+								Watch
+							</button>
+							<div className='awards'>
+								{/* <div className='wrapper'>
+									<div className='top'>Top Rated TV #148</div>
+									<div className='won'>Won 2 Golden Globes.</div>
+								</div> */}
+								<div className='another'>{data.Awards}</div>
+							</div>
+						</div>
+					) : (
+						<div className='MovePage-nothing'>{data.Error}</div>
+					)}
+				</div>
+				<div className='MovePage-text'>
+					<div className='MovePage-text__title'>
+						Watch {data.Title} on Richbee Shows
 					</div>
+					<div className='MovePage-text__plot'>{data.Plot}</div>
+					<div className='MovePage-text__like'>You may also like</div>
+					<div className='MovePage-text__likesMove'>
+						<LikeMove data={data} got={got} requestSearch={requestSearch} />
+						<LikeMove data={data} got={got} requestSearch={requestSearch} />
+						<LikeMove data={data} got={got} requestSearch={requestSearch} />
+						<LikeMove data={data} got={got} requestSearch={requestSearch} />
+					</div>
+				</div>
+				<div className='footer'>
+					<Link to='/' className='footer-inner'>
+						Richbee Shows
+					</Link>
 				</div>
 			</div>
 		</>
